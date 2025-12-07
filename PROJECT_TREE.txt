@@ -1,0 +1,78 @@
+DXF Auto - Project Structure
+================================================================================
+
+dxf-auto/
+│
+├── 📄 Core Application Files
+│   ├── main.py                    # CLI entry point with argument parsing
+│   ├── dxf_analyzer.py            # Core DXF analysis engine
+│   ├── entity_calculator.py       # Entity-specific length calculations
+│   ├── metrics.py                 # Data models for analysis results
+│   ├── formatter.py               # Console output formatting with colors
+│   └── __init__.py                # Package initialization
+│
+├── 📋 Documentation
+│   ├── README.md                  # Comprehensive documentation (main)
+│   ├── QUICKSTART.md             # Quick start guide
+│   ├── EXAMPLES.md               # Usage examples and integrations
+│   ├── PROJECT_SUMMARY.md        # Project overview
+│   └── PROJECT_TREE.txt          # This file
+│
+├── 🛠️ Development Files
+│   ├── requirements.txt          # Python dependencies (ezdxf)
+│   ├── .gitignore               # Git ignore patterns
+│   ├── LICENSE                  # MIT License
+│   ├── create_sample.py         # Sample DXF generator (simple)
+│   └── create_complex_sample.py # Sample DXF generator (complex)
+│
+├── 📦 Generated Files
+│   ├── sample_part.dxf          # Simple test DXF file
+│   └── complex_gear.dxf         # Complex test DXF file
+│
+└── 🔧 Environment
+    └── .venv/                   # Python virtual environment
+
+================================================================================
+
+Key Features:
+  ✅ Professional modular architecture
+  ✅ Type hints and error handling
+  ✅ Comprehensive documentation
+  ✅ Sample files for testing
+  ✅ Clean code principles
+  ✅ Extensible design
+
+Supported Entity Types:
+  • LINE - Straight line segments
+  • CIRCLE - Full circles
+  • ARC - Circular arcs
+  • LWPOLYLINE - Lightweight polylines with bulge support
+  • POLYLINE - Standard polylines
+  • SPLINE - B-spline curves (approximated)
+  • ELLIPSE - Elliptical arcs and full ellipses
+  • POINT - Point markers (no length)
+
+Output Metrics:
+  • Total cutting length (mm)
+  • Piercing count (closed contours)
+  • Material requirements (width × height)
+  • Entity breakdown by type
+  • Layer distribution
+  • Bounding box dimensions
+
+Usage:
+  $ python main.py <dxf_file>
+  $ python main.py --help
+  $ python main.py sample_part.dxf
+  $ python main.py complex_gear.dxf --no-color
+
+Installation:
+  $ pip install -r requirements.txt
+
+Testing:
+  $ python create_sample.py          # Create simple test file
+  $ python main.py sample_part.dxf   # Test with simple file
+  $ python create_complex_sample.py  # Create complex test file
+  $ python main.py complex_gear.dxf  # Test with complex file
+
+================================================================================
